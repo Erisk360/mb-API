@@ -59,8 +59,8 @@ if [ "$main_remaining" -lt "$THRESHOLD" ] && [ "$addon_remaining" = "null" ]; th
     -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json,application/vnd.capi.tmobile.nl.roamingbundles.v4+json" \
-    -H "User-Agent: Odido/8.11 (build:26520; iOS 18.4.0)" \
-    -H "Accept-Language: nl-NL,nl;q=0.9" \
+    # -H "User-Agent: Odido/8.11 (build:26520; iOS 18.4.0)" \ 
+   #  -H "Accept-Language: nl-NL,nl;q=0.9" \
     --data-raw "{\"bundles\":[{\"buyingCode\":\"$BUYING_CODE\"}]}"
 elif [ "$addon_remaining" = "0" ]; then
   echo "  Add-on is depleted. Buying another 2GB..."
@@ -68,8 +68,8 @@ elif [ "$addon_remaining" = "0" ]; then
     -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json,application/vnd.capi.tmobile.nl.roamingbundles.v4+json" \
-    -H "User-Agent: Odido/8.11 (build:26520; iOS 18.4.0)" \
-    -H "Accept-Language: nl-NL,nl;q=0.9" \
+    #-H "User-Agent: Odido/8.11 (build:26520; iOS 18.4.0)" \
+    #-H "Accept-Language: nl-NL,nl;q=0.9" \
     --data-raw "{\"bundles\":[{\"buyingCode\":\"$BUYING_CODE\"}]}"
 else
   echo " No action needed. Enough MB available."
